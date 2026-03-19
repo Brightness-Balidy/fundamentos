@@ -23,7 +23,7 @@
         ]
     ?>
 
-    <?php foreach($books as $book) :  ?>
+    <?php foreach($books as $book) : ?>
         <a href="<?= $book ?>">
             <li><?= $book['name']; ?></li>
         </a>
