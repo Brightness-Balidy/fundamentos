@@ -12,25 +12,33 @@
             [
                 'nome'=>'Jenifer Aniston',
                 'email'=>'jenifer@gmail.com',
-                'contact'=>'860749853' 
+                'contact'=>'860749853',
+                'age'=> 30
             ],
             [
                 'nome'=>'Brightness Balidy',
                 'email'=>'brightness@gmail.com',
-                'contact'=>'857055975'
+                'contact'=>'857055975',
+                'age'=>24
             ],
             [
                 'nome'=>'henry Balidy',
                 'email'=>'henry@gmail.com',
-                'contact'=>'878688975'
+                'contact'=>'878688975',
+                'age'=>16
             ]
         ]
     ?>
-
+        
         <?php foreach ($people as $person) : ?>
-            <a href="<?= $person ?>">
-                <li><?= $person['nome']?></li>
-            </a>
+
+            <?php if($person['age'] === 24) : ?>
+                <li>
+                    <a href="#"></a>
+                        <?= "contacte o "?> <h4><?= $person['nome'] ?></h4> (<?=" pelo " . $person['email'] ?>) </h1>
+                </li>
+
+            <?php endif ?>
         <?php endforeach ?>
 </body>
 </html>

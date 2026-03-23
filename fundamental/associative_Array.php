@@ -12,20 +12,31 @@
             [
                 'name' => 'Do Android Dream of Elecronic Sheep',
                 'author' => 'Philip K. Dick',
-                'purchaseUrl' => 'http://example.com'
+                'purchaseUrl' => 'http://example.com',
+                'releaseYear'=> '2022'
             ],
             [
                 'name' => 'Project Hail Mary',
                 'author' => 'Philip K. Dick',
-                'purchaseUrl' => 'http://example.com'
+                'purchaseUrl' => 'http://example.com',
+                'releaseYear' => '2010'
             ],
+            [
+                'name'=> 'O outro Pé da Sereia',
+                'author'=> 'Mia Couto',
+                'purchaseUrl'=>'http://example.com',
+                'releaseYear'=>'2001'
+            ]
                         
         ]
     ?>
 
     <?php foreach($books as $book) : ?>
+
+        
+
         <a href="<?= $book ?>">
-            <li><?= $book['name']; ?></li>
+            <li><?= $book['name'];?> (<?= $book['releaseYear'] ?>)</li>
         </a>
     <?php endforeach ?>
 </body>
