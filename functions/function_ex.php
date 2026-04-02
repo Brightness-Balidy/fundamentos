@@ -56,8 +56,9 @@
         }
     
     ?>
+    
     <?php foreach(filterAlbumByYear($album, 2020) as $song)   :  ?>
-
+        //daqueleas musicas filtradas, que foram lançadas em 2020, queremos filtrar ainda mais, para que mostre apenas aquelas que foram feitas pelo artista "Hot Blaze"
             <?php if($song['artist'] === "Hot Blaze") : ?>
                 <li>
                     <?= "O titulo da musica é: " . $song['tittle'] ?>
