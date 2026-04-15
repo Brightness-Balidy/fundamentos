@@ -55,9 +55,13 @@
             
         }
     
+        $songYear = filterAlbumByYear($album, 2020);
     ?>
     
-    <?php foreach(filterAlbumByYear($album, 2020) as $song)   :  ?>
+    //com o filtererAlbumByYear(), nao estamos fazendo o loop da funcao, mas pelo que é retornado pela funcao que é o $songYear
+    
+    //foreach(filterAlbumByYear($album, 2020)as $song)
+        <?php foreach($songYear as $song)   :  ?>
         //daqueleas musicas filtradas, que foram lançadas em 2020, queremos filtrar ainda mais, para que mostre apenas aquelas que foram feitas pelo artista "Hot Blaze"
             <?php if($song['artist'] === "Hot Blaze") : ?>
                 <li>
