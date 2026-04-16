@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+    
+
+<?php
         $books = [
             [
                 "title" => "The Great Gatsby",
@@ -34,7 +36,7 @@
 
         [
             "song"=> "Perfeita",
-            "album"=>"Terapia do coração",
+            "album"=>"Terapia do Coração",
             "artist"=> "Hot Blaze",
             "year"=> 2020
         ],
@@ -46,13 +48,13 @@
         ],
         [
             "song"=>"Aniquilacao",
-            "album"=>"punchlines for days",
+            "album"=>"Punchlines for Days",
             "artist"=>"Hernani da Silva",
             "year"=>2020           
         ],    
         [
             "song"=>"Summer of 69'",
-            "album"=>"So far so good",
+            "album"=>"So far so Good",
             "artist"=>"Bryan Adams",
             "year"=>1999
         ]
@@ -61,20 +63,23 @@
     
 
         //lambda function para filtrar os livros por ano/ ou tambem conhecida com unamed functions, podemos atribuir a variaveis e utilizar em outros contextos 
+        
         //deixamos a funcao um pouco mais generica nao especificando sobre de que array se trata mas colocando valores que serao interpretados levando em conta o tipo de array se trata 
 
-        //filtrar arrays genericamente especificamente arrays associativos
-        $filter = function ($items, $key, $value){
+        $filter = function ($items, $fn){
             $filteredItems =[];
 
             foreach($items as $item){
-                if($item[$key] === $value){
+                if($fn($item)){
                     $filteredItems[] = $item;
                 }
             }
             return $filteredItems;
         };
-            $filteredAlbums = $filter($album, 'year', 1999);
+
+            $filteredAlbums = $filter($album, function ($book){
+                return $book['year'] > 2020;
+            });
     ?>
     
     <?php foreach($filteredAlbums as $item) : ?>
@@ -90,6 +95,7 @@
         </div>
 
       <?php endforeach?>
+
 
 </body>
 </html>
